@@ -405,7 +405,7 @@ class TransformAndStoreApi
     public function transformAndStoreRequest($transform_request = null)
     {
 
-        $resourcePath = '/media_editing/transform_and_store';
+        $resourcePath = '/media_editing/transform';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
