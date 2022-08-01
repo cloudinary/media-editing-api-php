@@ -1,10 +1,10 @@
 <?php
 /**
- * TransformApi
+ * TransformAndStoreApi
  * PHP version 7.4
  *
  * @category Class
- * @package  Cloudinary
+ * @package  Cloudinary\MediaEditing
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Cloudinary\Cloudinary;
+namespace Cloudinary\MediaEditing\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,20 +34,20 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Cloudinary\ApiException;
-use Cloudinary\Configuration;
-use Cloudinary\HeaderSelector;
-use Cloudinary\ObjectSerializer;
+use Cloudinary\MediaEditing\ApiException;
+use Cloudinary\MediaEditing\Configuration;
+use Cloudinary\MediaEditing\HeaderSelector;
+use Cloudinary\MediaEditing\ObjectSerializer;
 
 /**
- * TransformApi Class Doc Comment
+ * TransformAndStoreApi Class Doc Comment
  *
  * @category Class
- * @package  Cloudinary
+ * @package  Cloudinary\MediaEditing
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class TransformApi
+class TransformAndStoreApi
 {
     /**
      * @var ClientInterface
@@ -116,38 +116,36 @@ class TransformApi
     }
 
     /**
-     * Operation transform
+     * Operation transformAndStore
      *
-     * Transform a media asset
+     * Transform and store media asset
      *
-     * @param  string $cloud_name Name of the Cloud (required)
-     * @param  \Cloudinary\Model\TransformRequest $transform_request transform_request (optional)
+     * @param  \Cloudinary\MediaEditing\Model\TransformRequest $transform_request transform_request (optional)
      *
-     * @throws \Cloudinary\ApiException on non-2xx response
+     * @throws \Cloudinary\MediaEditing\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Cloudinary\Model\TransformResult|\Cloudinary\Model\EnqueuedResponse|\Cloudinary\Model\ErrorResponse|\Cloudinary\Model\ErrorResponse|\Cloudinary\Model\ErrorResponse
+     * @return \Cloudinary\MediaEditing\Model\TransformResult|\Cloudinary\MediaEditing\Model\EnqueuedResponse|\Cloudinary\MediaEditing\Model\ErrorResponse|\Cloudinary\MediaEditing\Model\ErrorResponse|\Cloudinary\MediaEditing\Model\ErrorResponse
      */
-    public function transform($cloud_name, $transform_request = null)
+    public function transformAndStore($transform_request = null)
     {
-        list($response) = $this->transformWithHttpInfo($cloud_name, $transform_request);
+        list($response) = $this->transformAndStoreWithHttpInfo($transform_request);
         return $response;
     }
 
     /**
-     * Operation transformWithHttpInfo
+     * Operation transformAndStoreWithHttpInfo
      *
-     * Transform a media asset
+     * Transform and store media asset
      *
-     * @param  string $cloud_name Name of the Cloud (required)
-     * @param  \Cloudinary\Model\TransformRequest $transform_request (optional)
+     * @param  \Cloudinary\MediaEditing\Model\TransformRequest $transform_request (optional)
      *
-     * @throws \Cloudinary\ApiException on non-2xx response
+     * @throws \Cloudinary\MediaEditing\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Cloudinary\Model\TransformResult|\Cloudinary\Model\EnqueuedResponse|\Cloudinary\Model\ErrorResponse|\Cloudinary\Model\ErrorResponse|\Cloudinary\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Cloudinary\MediaEditing\Model\TransformResult|\Cloudinary\MediaEditing\Model\EnqueuedResponse|\Cloudinary\MediaEditing\Model\ErrorResponse|\Cloudinary\MediaEditing\Model\ErrorResponse|\Cloudinary\MediaEditing\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transformWithHttpInfo($cloud_name, $transform_request = null)
+    public function transformAndStoreWithHttpInfo($transform_request = null)
     {
-        $request = $this->transformRequest($cloud_name, $transform_request);
+        $request = $this->transformAndStoreRequest($transform_request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -186,83 +184,83 @@ class TransformApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Cloudinary\Model\TransformResult' === '\SplFileObject') {
+                    if ('\Cloudinary\MediaEditing\Model\TransformResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Cloudinary\Model\TransformResult' !== 'string') {
+                        if ('\Cloudinary\MediaEditing\Model\TransformResult' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Cloudinary\Model\TransformResult', []),
+                        ObjectSerializer::deserialize($content, '\Cloudinary\MediaEditing\Model\TransformResult', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 202:
-                    if ('\Cloudinary\Model\EnqueuedResponse' === '\SplFileObject') {
+                    if ('\Cloudinary\MediaEditing\Model\EnqueuedResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Cloudinary\Model\EnqueuedResponse' !== 'string') {
+                        if ('\Cloudinary\MediaEditing\Model\EnqueuedResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Cloudinary\Model\EnqueuedResponse', []),
+                        ObjectSerializer::deserialize($content, '\Cloudinary\MediaEditing\Model\EnqueuedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Cloudinary\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\Cloudinary\MediaEditing\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Cloudinary\Model\ErrorResponse' !== 'string') {
+                        if ('\Cloudinary\MediaEditing\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Cloudinary\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\Cloudinary\MediaEditing\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Cloudinary\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\Cloudinary\MediaEditing\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Cloudinary\Model\ErrorResponse' !== 'string') {
+                        if ('\Cloudinary\MediaEditing\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Cloudinary\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\Cloudinary\MediaEditing\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Cloudinary\Model\ErrorResponse' === '\SplFileObject') {
+                    if ('\Cloudinary\MediaEditing\Model\ErrorResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Cloudinary\Model\ErrorResponse' !== 'string') {
+                        if ('\Cloudinary\MediaEditing\Model\ErrorResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Cloudinary\Model\ErrorResponse', []),
+                        ObjectSerializer::deserialize($content, '\Cloudinary\MediaEditing\Model\ErrorResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Cloudinary\Model\TransformResult';
+            $returnType = '\Cloudinary\MediaEditing\Model\TransformResult';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -283,7 +281,7 @@ class TransformApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Cloudinary\Model\TransformResult',
+                        '\Cloudinary\MediaEditing\Model\TransformResult',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -291,7 +289,7 @@ class TransformApi
                 case 202:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Cloudinary\Model\EnqueuedResponse',
+                        '\Cloudinary\MediaEditing\Model\EnqueuedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -299,7 +297,7 @@ class TransformApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Cloudinary\Model\ErrorResponse',
+                        '\Cloudinary\MediaEditing\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -307,7 +305,7 @@ class TransformApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Cloudinary\Model\ErrorResponse',
+                        '\Cloudinary\MediaEditing\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -315,7 +313,7 @@ class TransformApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Cloudinary\Model\ErrorResponse',
+                        '\Cloudinary\MediaEditing\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -326,19 +324,18 @@ class TransformApi
     }
 
     /**
-     * Operation transformAsync
+     * Operation transformAndStoreAsync
      *
-     * Transform a media asset
+     * Transform and store media asset
      *
-     * @param  string $cloud_name Name of the Cloud (required)
-     * @param  \Cloudinary\Model\TransformRequest $transform_request (optional)
+     * @param  \Cloudinary\MediaEditing\Model\TransformRequest $transform_request (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function transformAsync($cloud_name, $transform_request = null)
+    public function transformAndStoreAsync($transform_request = null)
     {
-        return $this->transformAsyncWithHttpInfo($cloud_name, $transform_request)
+        return $this->transformAndStoreAsyncWithHttpInfo($transform_request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -347,20 +344,19 @@ class TransformApi
     }
 
     /**
-     * Operation transformAsyncWithHttpInfo
+     * Operation transformAndStoreAsyncWithHttpInfo
      *
-     * Transform a media asset
+     * Transform and store media asset
      *
-     * @param  string $cloud_name Name of the Cloud (required)
-     * @param  \Cloudinary\Model\TransformRequest $transform_request (optional)
+     * @param  \Cloudinary\MediaEditing\Model\TransformRequest $transform_request (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function transformAsyncWithHttpInfo($cloud_name, $transform_request = null)
+    public function transformAndStoreAsyncWithHttpInfo($transform_request = null)
     {
-        $returnType = '\Cloudinary\Model\TransformResult';
-        $request = $this->transformRequest($cloud_name, $transform_request);
+        $returnType = '\Cloudinary\MediaEditing\Model\TransformResult';
+        $request = $this->transformAndStoreRequest($transform_request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -399,24 +395,17 @@ class TransformApi
     }
 
     /**
-     * Create request for operation 'transform'
+     * Create request for operation 'transformAndStore'
      *
-     * @param  string $cloud_name Name of the Cloud (required)
-     * @param  \Cloudinary\Model\TransformRequest $transform_request (optional)
+     * @param  \Cloudinary\MediaEditing\Model\TransformRequest $transform_request (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function transformRequest($cloud_name, $transform_request = null)
+    public function transformAndStoreRequest($transform_request = null)
     {
-        // verify the required parameter 'cloud_name' is set
-        if ($cloud_name === null || (is_array($cloud_name) && count($cloud_name) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $cloud_name when calling transform'
-            );
-        }
 
-        $resourcePath = '/{cloud_name}/media_editing/transform';
+        $resourcePath = '/media_editing/transform_and_store';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -425,23 +414,15 @@ class TransformApi
 
 
 
-        // path params
-        if ($cloud_name !== null) {
-            $resourcePath = str_replace(
-                '{' . 'cloud_name' . '}',
-                ObjectSerializer::toPathValue($cloud_name),
-                $resourcePath
-            );
-        }
 
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json', 'application/octet-stream']
+                ['application/json']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json', 'application/octet-stream'],
+                ['application/json'],
                 ['application/json']
             );
         }

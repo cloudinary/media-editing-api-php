@@ -1,21 +1,21 @@
-# Cloudinary\MediaEditing\TransformApi
+# Cloudinary\MediaEditing\TransformAndStoreApi
 
 All URIs are relative to https://api.cloudinary.com/v2/demo.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**transform()**](TransformApi.md#transform) | **POST** /media_editing/transform | Transform a media asset
+[**transformAndStore()**](TransformAndStoreApi.md#transformAndStore) | **POST** /media_editing/transform_and_store | Transform and store media asset
 
 
-## `transform()`
+## `transformAndStore()`
 
 ```php
-transform($transform_request): \SplFileObject
+transformAndStore($transform_request): \Cloudinary\MediaEditing\Model\TransformResult
 ```
 
-Transform a media asset
+Transform and store media asset
 
-Transform a media asset
+Transform and store media asset
 
 ### Example
 
@@ -29,15 +29,15 @@ $config = Cloudinary\MediaEditing\Configuration::getDefaultConfiguration()
               ->setCloudinaryUrl('cloudinary://key:secret@cloud_name');
 
 
-$apiInstance = new Cloudinary\MediaEditing\Api\TransformApi(null, $config);
+$apiInstance = new Cloudinary\MediaEditing\Api\TransformAndStoreApi(null, $config);
 
 $transform_request = {"input_type":"url","url":"https://cloudinary-devs.github.io/cld-docs-assets/assets/images/shoes.jpg","transformation_descriptor":{"descriptor_type":"canonical","canonical_transformation":"w_500,c_scale,f_auto"}}; // \Cloudinary\MediaEditing\Model\TransformRequest
 
 try {
-    $result = $apiInstance->transform($transform_request);
+    $result = $apiInstance->transformAndStore($transform_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransformApi->transform: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransformAndStoreApi->transformAndStore: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**\SplFileObject**
+[**\Cloudinary\MediaEditing\Model\TransformResult**](../Model/TransformResult.md)
 
 ### Authorization
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `application/octet-stream`, `application/json`
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

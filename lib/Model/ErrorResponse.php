@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Cloudinary
+ * @package  Cloudinary\MediaEditing
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Cloudinary\Model;
+namespace Cloudinary\MediaEditing\Model;
 
 use \ArrayAccess;
-use \Cloudinary\ObjectSerializer;
+use \Cloudinary\MediaEditing\ObjectSerializer;
 
 /**
  * ErrorResponse Class Doc Comment
  *
  * @category Class
- * @package  Cloudinary
+ * @package  Cloudinary\MediaEditing
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'error' => '\Cloudinary\Model\ErrorResponseError'
+        'error' => '\Cloudinary\MediaEditing\Model\ErrorResponseError'
     ];
 
     /**
@@ -206,7 +206,7 @@ class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets error
      *
-     * @return \Cloudinary\Model\ErrorResponseError|null
+     * @return \Cloudinary\MediaEditing\Model\ErrorResponseError|null
      */
     public function getError()
     {
@@ -216,7 +216,7 @@ class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets error
      *
-     * @param \Cloudinary\Model\ErrorResponseError|null $error error
+     * @param \Cloudinary\MediaEditing\Model\ErrorResponseError|null $error error
      *
      * @return self
      */

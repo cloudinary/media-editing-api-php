@@ -43,22 +43,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-// Configure HTTP basic authorization: basicAuth
-$config = Cloudinary\Configuration::getDefaultConfiguration()
+// Configure Cloudinary URL: basicAuth
+$config = Cloudinary\MediaEditing\Configuration::getDefaultConfiguration()
               ->setCloudinaryUrl('cloudinary://key:secret@cloud_name');
 
 
-$apiInstance = new Cloudinary\Api\TransformApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$cloud_name = my_cloud; // string | Name of the Cloud
-$transform_request = {"input_type":"url","url":"https://res.cloudinary.com/demo/image/upload/demo.jpg","transformation_descriptor":{"descriptor_type":"canonical","canonical_transformation":"w_500,c_scale,f_auto"}}; // \Cloudinary\Model\TransformRequest
+$apiInstance = new Cloudinary\MediaEditing\Api\TransformApi(null, $config);
+
+$transform_request = {"input_type":"url","url":"https://cloudinary-devs.github.io/cld-docs-assets/assets/images/shoes.jpg","transformation_descriptor":{"descriptor_type":"canonical","canonical_transformation":"w_500,c_scale,f_auto"}}; // \Cloudinary\MediaEditing\Model\TransformRequest
 
 try {
-    $result = $apiInstance->transform($cloud_name, $transform_request);
+    $result = $apiInstance->transform($transform_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransformApi->transform: ', $e->getMessage(), PHP_EOL;
@@ -68,11 +63,12 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *https://api.cloudinary.com/v2*
+All URIs are relative to *https://api.cloudinary.com/v2/demo*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*TransformApi* | [**transform**](docs/Api/TransformApi.md#transform) | **POST** /{cloud_name}/media_editing/transform | Transform a media asset
+*TransformApi* | [**transform**](docs/Api/TransformApi.md#transform) | **POST** /media_editing/transform | Transform a media asset
+*TransformAndStoreApi* | [**transformAndStore**](docs/Api/TransformAndStoreApi.md#transformandstore) | **POST** /media_editing/transform_and_store | Transform and store media asset
 
 ## Models
 

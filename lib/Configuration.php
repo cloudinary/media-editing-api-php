@@ -3,7 +3,7 @@
  * Configuration
  *
  * @category Class
- * @package  Cloudinary
+ * @package  Cloudinary\MediaEditing
  * @author   Cloudinary
  * @link     https://cloudinary.com
  */
@@ -23,13 +23,13 @@
  * Do not edit the class manually.
  */
 
-namespace Cloudinary;
+namespace Cloudinary\MediaEditing;
 
 /**
  * Configuration Class Doc Comment
  *
  * @category Class
- * @package  Cloudinary
+ * @package  Cloudinary\MediaEditing
  * @author   Cloudinary
  * @link     https://cloudinary.com
  */
@@ -80,7 +80,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://api.cloudinary.com/v2';
+    protected $host = 'https://api.cloudinary.com/v2/demo';
 
     /**
      * The CLOUDINARY_URL
@@ -514,7 +514,7 @@ class Configuration
      */
     public static function toDebugReport()
     {
-        $report  = 'PHP SDK (Cloudinary) Debug Report:' . PHP_EOL;
+        $report  = 'PHP SDK (Cloudinary\MediaEditing) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    The version of the OpenAPI document: 0.1.0-beta' . PHP_EOL;
@@ -557,8 +557,14 @@ class Configuration
     {
         return [
             [
-                "url" => "https://api.cloudinary.com/v2",
+                "url" => "https://api.cloudinary.com/v2/{cloudName}",
                 "description" => "No description provided",
+                "variables" => [
+                    "cloudName" => [
+                        "description" => "Name of your Cloud",
+                        "default_value" => "demo",
+                    ]
+                ]
             ]
         ];
     }

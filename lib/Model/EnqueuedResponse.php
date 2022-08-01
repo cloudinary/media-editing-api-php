@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Cloudinary
+ * @package  Cloudinary\MediaEditing
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Cloudinary\Model;
+namespace Cloudinary\MediaEditing\Model;
 
 use \ArrayAccess;
-use \Cloudinary\ObjectSerializer;
+use \Cloudinary\MediaEditing\ObjectSerializer;
 
 /**
  * EnqueuedResponse Class Doc Comment
  *
  * @category Class
- * @package  Cloudinary
+ * @package  Cloudinary\MediaEditing
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>

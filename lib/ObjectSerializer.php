@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Cloudinary
+ * @package  Cloudinary\MediaEditing
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Cloudinary;
+namespace Cloudinary\MediaEditing;
 
 use GuzzleHttp\Psr7\Utils;
-use Cloudinary\Model\ModelInterface;
+use Cloudinary\MediaEditing\Model\ModelInterface;
 
 /**
  * ObjectSerializer Class Doc Comment
  *
  * @category Class
- * @package  Cloudinary
+ * @package  Cloudinary\MediaEditing
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -458,7 +458,7 @@ class ObjectSerializer
             // If a discriminator is defined and points to a valid subclass, use it.
             $discriminator = $class::DISCRIMINATOR;
             if (!empty($discriminator) && isset($data->{$discriminator}) && is_string($data->{$discriminator})) {
-                $subclass = '\Cloudinary\Model\\' . $data->{$discriminator};
+                $subclass = '\Cloudinary\MediaEditing\Model\\' . $data->{$discriminator};
                 if (is_subclass_of($subclass, $class)) {
                     $class = $subclass;
                 }

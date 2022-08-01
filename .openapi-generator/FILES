@@ -5,6 +5,7 @@
 LICENSE
 README.md
 composer.json
+docs/Api/TransformAndStoreApi.md
 docs/Api/TransformApi.md
 docs/Model/EnqueuedResponse.md
 docs/Model/ErrorResponse.md
@@ -14,6 +15,8 @@ docs/Model/TransformRequest.md
 docs/Model/TransformResult.md
 docs/Model/TransformationDescriptor.md
 git_push.sh
+lib/Api/TransformAndStoreApi.php
+lib/Api/TransformApi.php
 lib/ApiException.php
 lib/Configuration.php
 lib/HeaderSelector.php
@@ -26,8 +29,8 @@ lib/Model/TransformRequest.php
 lib/Model/TransformResult.php
 lib/Model/TransformationDescriptor.php
 lib/ObjectSerializer.php
-lib/TransformApi.php
 phpunit.xml.dist
+test/Api/TransformAndStoreApiTest.php
 test/Api/TransformApiTest.php
 test/Model/EnqueuedResponseTest.php
 test/Model/ErrorResponseErrorTest.php

@@ -1,6 +1,6 @@
 <?php
 /**
- * TransformApiTest
+ * TransformAndStoreApiTest
  * PHP version 7.4
  *
  * @category Class
@@ -33,14 +33,14 @@ use \Cloudinary\MediaEditing\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
- * TransformApiTest Class Doc Comment
+ * TransformAndStoreApiTest Class Doc Comment
  *
  * @category Class
  * @package  Cloudinary\MediaEditing
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class TransformApiTest extends TestCase
+class TransformAndStoreApiTest extends TestCase
 {
 
     /**
@@ -72,12 +72,12 @@ class TransformApiTest extends TestCase
     }
 
     /**
-     * Test case for transform
+     * Test case for transformAndStore
      *
-     * Transform a media asset.
+     * Transform and store media asset.
      *
      */
-    public function testTransform()
+    public function testTransformAndStore()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

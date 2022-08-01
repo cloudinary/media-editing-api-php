@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Cloudinary
+ * @package  Cloudinary\MediaEditing
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Cloudinary\Model;
+namespace Cloudinary\MediaEditing\Model;
 
 use \ArrayAccess;
-use \Cloudinary\ObjectSerializer;
+use \Cloudinary\MediaEditing\ObjectSerializer;
 
 /**
  * TransformRequest Class Doc Comment
  *
  * @category Class
- * @package  Cloudinary
+ * @package  Cloudinary\MediaEditing
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,11 +60,11 @@ class TransformRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'input_type' => 'string',
         'resource_type' => 'string',
         'url' => 'string',
-        'media_source' => '\Cloudinary\Model\MediaConnectorInstance',
-        'transformation_descriptor' => '\Cloudinary\Model\TransformationDescriptor',
+        'media_source' => '\Cloudinary\MediaEditing\Model\MediaConnectorInstance',
+        'transformation_descriptor' => '\Cloudinary\MediaEditing\Model\TransformationDescriptor',
         'async' => 'bool',
         'notification_url' => 'string',
-        'media_target' => '\Cloudinary\Model\MediaConnectorInstance'
+        'media_target' => '\Cloudinary\MediaEditing\Model\MediaConnectorInstance'
     ];
 
     /**
@@ -394,7 +394,7 @@ class TransformRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets media_source
      *
-     * @return \Cloudinary\Model\MediaConnectorInstance|null
+     * @return \Cloudinary\MediaEditing\Model\MediaConnectorInstance|null
      */
     public function getMediaSource()
     {
@@ -404,7 +404,7 @@ class TransformRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets media_source
      *
-     * @param \Cloudinary\Model\MediaConnectorInstance|null $media_source media_source
+     * @param \Cloudinary\MediaEditing\Model\MediaConnectorInstance|null $media_source media_source
      *
      * @return self
      */
@@ -418,7 +418,7 @@ class TransformRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets transformation_descriptor
      *
-     * @return \Cloudinary\Model\TransformationDescriptor
+     * @return \Cloudinary\MediaEditing\Model\TransformationDescriptor
      */
     public function getTransformationDescriptor()
     {
@@ -428,7 +428,7 @@ class TransformRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transformation_descriptor
      *
-     * @param \Cloudinary\Model\TransformationDescriptor $transformation_descriptor transformation_descriptor
+     * @param \Cloudinary\MediaEditing\Model\TransformationDescriptor $transformation_descriptor transformation_descriptor
      *
      * @return self
      */
@@ -490,7 +490,7 @@ class TransformRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets media_target
      *
-     * @return \Cloudinary\Model\MediaConnectorInstance|null
+     * @return \Cloudinary\MediaEditing\Model\MediaConnectorInstance|null
      */
     public function getMediaTarget()
     {
@@ -500,7 +500,7 @@ class TransformRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets media_target
      *
-     * @param \Cloudinary\Model\MediaConnectorInstance|null $media_target media_target
+     * @param \Cloudinary\MediaEditing\Model\MediaConnectorInstance|null $media_target media_target
      *
      * @return self
      */
